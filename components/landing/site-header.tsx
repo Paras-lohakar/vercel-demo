@@ -64,7 +64,7 @@ export function SiteHeader() {
 
         <div className="flex items-center gap-2">
           <a
-           href="http://localhost:3001/"
+           href="https://terrasphere-dashboard.vercel.app/"
            className="hidden items-center gap-2 rounded-xl bg-primary px-6 py-3.5 text-[17px] font-semibold text-primary-foreground transition hover:bg-brand sm:inline-flex"
           >
            Get Started <ArrowRight className="size-5" aria-hidden="true" />
