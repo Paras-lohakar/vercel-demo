@@ -1,0 +1,94 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+@import 'shadcn/tailwind.css';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-sans: var(--font-dm-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-instrument-serif), ui-serif, Georgia, serif;
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --color-foreground: var(--foreground);
+  --color-background: var(--background);
+  --color-brand: var(--brand);
+  --color-brand-soft: var(--brand-soft);
+  --color-alert: var(--alert);
+  --color-warm: var(--warm);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+:root {
+  color-scheme: light;
+  --background: #f4eee2;
+  --foreground: #0e1a15;
+  --card: #fbf7ef;
+  --card-foreground: #0e1a15;
+  --popover: #ffffff;
+  --popover-foreground: #0e1a15;
+  --primary: #0d3b2c;
+  --primary-foreground: #ffffff;
+  --secondary: #efe8da;
+  --secondary-foreground: #0e1a15;
+  --muted: #ece5d6;
+  --muted-foreground: #4f5752;
+  --accent: #dfeee4;
+  --accent-foreground: #0d3b2c;
+  --destructive: #e03a3a;
+  --border: #e6ddcc;
+  --input: #e6ddcc;
+  --ring: #1f6b4f;
+  --brand: #1f5c45;
+  --brand-soft: #d9ebdf;
+  --alert: #e5392f;
+  --warm: #d9651f;
+  --radius: 0.75rem;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+  }
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+}
+
+@utility topo-bg {
+  background-image:
+    radial-gradient(circle at 0% 30%, transparent 0 140px, rgba(13, 59, 44, 0.06) 141px 142px, transparent 143px 210px, rgba(13, 59, 44, 0.05) 211px 212px, transparent 213px),
+    repeating-radial-gradient(ellipse at 100% 0%, transparent 0 28px, rgba(13, 59, 44, 0.035) 29px 30px);
+}
+
+@keyframes scan-pulse {
+  0%, 100% { transform: scale(1); opacity: 0.9; }
+  50% { transform: scale(1.35); opacity: 0.4; }
+}
+
+@utility animate-scan-pulse {
+  animation: scan-pulse 2.2s ease-in-out infinite;
+}
